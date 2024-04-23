@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br"  xmlns="https://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="col-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-header bg-info text-center text-white">
+                    <h3>Editar Pagamentos</h3>
+                </div>
+ 
+                <div class="card-body">
+                    <Form th:action="@{/pagamento/atualizar}" method="POST" id="pagamentosform" th:object="${pagamento}">
+ <div class="row">
+    <div class="col-2">
+        <label for="id">ID</label>
+    </div>
+    <div class="col-4">
+        <input
+        th:field="*{id}"
+        type="text"
+        class="form-control"
+        readonly/>
+    </div>
+ </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="nome"><b>Nome</b></label>
+                            </div>
+                            <div class="col-4">
+                                <input
+                                th:field="*{nome}"
+                                type="text"
+                                name="nome"
+                                id="nome"
+                                class="form-control"/>
+                            </div>
+                        </div>
+ 
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="localizacao">Localização</label>
+                            </div>
+                            <div class="col-4">
+                                <input 
+                                th:field="*{localizacao}"
+                                type="text"
+                                name="localizacao"
+                                id="localizacao"
+                                class="form-control"/>
+                            </div>
+                        </div>
+ 
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="valor">valor</label>
+                            </div>
+                            <div class="col-4">
+                                <input
+                                th:field="*{valor}"
+                                type="text"
+                                name="valor"
+                                id="valor"
+                                class="form-control"/>
+                            </div>
+                        </div>
+ 
+                        <br>
+                        <button type="submit" class="btn btn-success">
+                            Atualizar
+                        </button>
+                        <button th:href="@{/pagamento/listar}" type="submit" class="btn btn-primary">
+                            Listar Pagamentos
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer bg-white text-success">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>
